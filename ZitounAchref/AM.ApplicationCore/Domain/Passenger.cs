@@ -10,7 +10,6 @@ namespace AM.ApplicationCore.Domain
     {
         public DateTime birthDate { get; set; }
         public string firstName { get; set; }
-
         public string lastName { get; set; }
         public string emailAdress { get; set; }
         public string telNumber { get; set; }
@@ -27,22 +26,18 @@ namespace AM.ApplicationCore.Domain
         {
             return fName == firstName && lName == lastName;
         }
-
         public bool CheckProfile(string fName, string lName, string email)
         {
             return fName == firstName && lName == lastName && email == emailAdress;
         }
-
         */
 
-        public bool CheckProfile(string fName, string lName, string email)
+        public bool CheckProfile(string fName, string lName, string email=null)
         {
-            if (fName == firstName && lName == lastName)
-                return true;
-            else if(fName == firstName && lName == lastName && email == emailAdress)
-                return true;
+            if (email==null)
+                return fName == firstName && lName == lastName;
 
-            return false;
+            return fName == firstName && lName == lastName && email == emailAdress;
         }
 
         public virtual void PassengerType()

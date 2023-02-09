@@ -1,8 +1,12 @@
 ﻿using AM.ApplicationCore.Domain;
+using AM.ApplicationCore.Interfaces;
+using AM.ApplicationCore.Services;
+using System.Collections;
+using System.Collections.Generic;
 
 
 // 7-
-//Plane plane = new Plane();
+Plane plane = new Plane();
 //plane.planeId = 1;
 //plane.capacity = 500;
 //plane.planeType = PlaneType.Airbus;
@@ -25,14 +29,34 @@
 // 10 - Création des méthode checkprofile();
 
 // 11 -
-Passenger p = new Passenger();
-p.PassengerType();
+//Passenger p = new Passenger();
+//p.PassengerType();
 
-Staff s = new Staff();
-s.PassengerType();
+//Staff s = new Staff();
+//s.PassengerType();
 
-Traveller t = new Traveller();
-t.PassengerType();
+//Traveller t = new Traveller();
+//t.PassengerType();
+
+
+// ------------------------------------------------------------------------
+//TP2 
+// 5
+
+ServiceFlight serviceFlight = new ServiceFlight();
+serviceFlight.Flights = TestData.flights;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

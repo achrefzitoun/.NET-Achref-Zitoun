@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\4éme sem 2\\.NET\\ZitounAchref\\AM.UI.Console\\AM.UI.Console.csproj",
+      "projectUniqueName": "D:\\4eme_sem_2\\.NET\\ZitounAchref\\AM.UI.Console\\AM.UI.Console.csproj",
       "projectName": "AM.UI.Console",
-      "projectPath": "D:\\4éme sem 2\\.NET\\ZitounAchref\\AM.UI.Console\\AM.UI.Console.csproj",
+      "projectPath": "D:\\4eme_sem_2\\.NET\\ZitounAchref\\AM.UI.Console\\AM.UI.Console.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\4éme sem 2\\.NET\\ZitounAchref\\AM.UI.Console\\obj\\",
+      "outputPath": "D:\\4eme_sem_2\\.NET\\ZitounAchref\\AM.UI.Console\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\4éme sem 2\\.NET\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
-              "projectPath": "D:\\4éme sem 2\\.NET\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
+            "D:\\4eme_sem_2\\.NET\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj": {
+              "projectPath": "D:\\4eme_sem_2\\.NET\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj"
             }
           }
         }

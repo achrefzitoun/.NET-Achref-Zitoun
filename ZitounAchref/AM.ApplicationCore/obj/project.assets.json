@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\4éme sem 2\\.NET\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
+      "projectUniqueName": "D:\\4eme_sem_2\\.NET\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
       "projectName": "AM.ApplicationCore",
-      "projectPath": "D:\\4éme sem 2\\.NET\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
+      "projectPath": "D:\\4eme_sem_2\\.NET\\ZitounAchref\\AM.ApplicationCore\\AM.ApplicationCore.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "D:\\4éme sem 2\\.NET\\ZitounAchref\\AM.ApplicationCore\\obj\\",
+      "outputPath": "D:\\4eme_sem_2\\.NET\\ZitounAchref\\AM.ApplicationCore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",

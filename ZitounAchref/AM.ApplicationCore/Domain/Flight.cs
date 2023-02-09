@@ -8,12 +8,12 @@ namespace AM.ApplicationCore.Domain
 {
     public class Flight
     {
-        public string destination { get; set; }
-        public string departure { get; set; }
-        public DateTime flightDate { get; set; }
+        public string destination { get; set; } -
+        public string departure { get; set; } -
+        public DateTime flightDate { get; set; } -
         public int flightId { get; set; }
-        public string effectiveArrival { get; set; }
-        public string estimatedDuration { get; set; }
+        public DateTime effectiveArrival { get; set; } -
+        public string estimatedDuration { get; set; } -
         public List<Passenger> passengers { get; set; }
         public Plane plane { get; set; }
 
