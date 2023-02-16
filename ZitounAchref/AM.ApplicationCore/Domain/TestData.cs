@@ -114,7 +114,7 @@ namespace AM.ApplicationCore.Domain
                 destination="Paris",
                 effectiveArrival=new DateTime(2022, 01, 01, 17, 10, 10),
                 plane = planes[1],
-                estimatedDuration="100",
+                estimatedDuration=100,
                 passengers=new List<Passenger>(travellers)
             },
             new Flight()
@@ -123,7 +123,7 @@ namespace AM.ApplicationCore.Domain
                 destination="Paris",
                 effectiveArrival=new DateTime(2022, 02, 01, 23, 10, 10),
                 plane = planes[0],
-                estimatedDuration="105",
+                estimatedDuration=105,
             },
             new Flight()
             {
@@ -131,7 +131,7 @@ namespace AM.ApplicationCore.Domain
                 destination="Paris",
                 effectiveArrival=new DateTime(2022, 03, 01, 6, 40, 10),
                 plane = planes[0],
-                estimatedDuration="100",
+                estimatedDuration=100,
             },
             new Flight()
             {
@@ -139,7 +139,7 @@ namespace AM.ApplicationCore.Domain
                 destination="Madrid",
                 effectiveArrival=new DateTime(2022, 04, 01, 8, 10, 10),
                 plane = planes[0],
-                estimatedDuration="130",
+                estimatedDuration=130,
             },
             new Flight()
             {
@@ -147,7 +147,7 @@ namespace AM.ApplicationCore.Domain
                 destination="Madrid",
                 effectiveArrival=new DateTime(2022, 05, 01, 18, 50, 10),
                 plane = planes[0],
-                estimatedDuration="105",
+                estimatedDuration=105,
             }
             ,new Flight()
             {
@@ -155,7 +155,7 @@ namespace AM.ApplicationCore.Domain
                 destination="Lisbonne",
                 effectiveArrival=new DateTime(2022, 06, 01, 22, 30, 10),
                 plane = planes[1],
-                estimatedDuration="200",
+                estimatedDuration=200,
             }
         };
 

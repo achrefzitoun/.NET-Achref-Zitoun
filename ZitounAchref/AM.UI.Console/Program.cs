@@ -46,8 +46,15 @@ Plane plane = new Plane();
 ServiceFlight serviceFlight = new ServiceFlight();
 serviceFlight.Flights = TestData.flights;
 
+serviceFlight.GetFlights("Paris",delegate(Flight f, String c)
+{
+    return f.destination == c;
+});
 
-
+serviceFlight.GetFlights("2023/01/01", (Flight f, String c) =>
+{
+    return f.flightDate.Equals(c);
+});
 
 
 
