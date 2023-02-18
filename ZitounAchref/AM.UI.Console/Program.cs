@@ -3,6 +3,7 @@ using AM.ApplicationCore.Interfaces;
 using AM.ApplicationCore.Services;
 using System.Collections;
 using System.Collections.Generic;
+using static AM.ApplicationCore.Services.ServiceFlight;
 
 
 // 7-
@@ -46,6 +47,7 @@ Plane plane = new Plane();
 ServiceFlight serviceFlight = new ServiceFlight();
 serviceFlight.Flights = TestData.flights;
 
+/*
 serviceFlight.GetFlights("Paris",delegate(Flight f, String c)
 {
     return f.destination == c;
@@ -55,17 +57,37 @@ serviceFlight.GetFlights("2023/01/01", (Flight f, String c) =>
 {
     return f.flightDate.Equals(c);
 });
+*/
+
+/*
+
+*/
 
 
 
+// TP Partie 2 
+// Question 16 / 17 / 18 
 
+        Action<Plane> FlightDetailsDel = serviceFlight.ShowFlightDetails;
+        FlightDetailsDel(TestData.planes[1]);
 
+        Console.WriteLine("==========================");
 
+        Func<String,double> DurationAverageDel = serviceFlight.DurationAverage;
+        Console.WriteLine(DurationAverageDel("Paris"));
 
+        Console.WriteLine("==========================");
 
+        FlightDetailsDel = Plane => serviceFlight.ShowFlightDetails(TestData.planes[1]);
 
+        Console.WriteLine("==========================");
 
+        DurationAverageDel = flightList => TestData.flights.Average(flight => flight.estimatedDuration);
 
+        Console.WriteLine("==========================");
+
+// Qestion 19 En ServiceFlight 
+// Question 20 En Passenger Extension
 
 
 

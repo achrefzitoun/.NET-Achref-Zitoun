@@ -12,12 +12,14 @@ namespace AM.ApplicationCore.Domain
         {
             new Plane()
             {
+                planeId= 1,
                 capacity= 150,
                 planeType=PlaneType.Boing,
                 manufactureDate=new DateTime(2015, 02, 03)
             },
             new Plane()
             {
+                planeId= 2,
                 capacity= 250,
                 planeType=PlaneType.Airbus,
                 manufactureDate=new DateTime(2020, 11, 11)

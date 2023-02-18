@@ -1,6 +1,7 @@
 ﻿using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Interfaces;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AM.ApplicationCore.Services
 {
-    public class ServiceFlight : IServiceFlight
+    public class ServiceFlight 
     {
         public List<Flight> Flights { get; set; } = new List<Flight>(); // Création d'une liste 
 
@@ -47,15 +48,16 @@ namespace AM.ApplicationCore.Services
 
         public List<Flight> GetFlights(string filterValue, Func<Flight, String, Boolean> condition)
         {
-            List<Flight> f = new List<Flight>() ;
-            foreach (var flight in Flights)
-            {
-                if (condition(flight,filterValue))
-                {
-                    f.Add(flight);
-                    Console.WriteLine(flight);
-                }
-            }
+            //List<Flight> f = new List<Flight>() ;
+            //foreach (var flight in Flights)
+            //{
+            //    if (condition(flight,filterValue))
+            //    {
+            //        f.Add(flight);
+            //        Console.WriteLine(flight);
+            //    }
+            //}
+
             // Methode 1
             //if(filterType.Equals("destination"))
             //{
@@ -177,11 +179,22 @@ namespace AM.ApplicationCore.Services
             //        break;
             //}
 
-            return f;
+            // Methode 3 avec LINQ
+            var query = from flight in Flights
+                        where condition(flight, filterValue)
+                        select flight;
+                List<Flight> f = query.ToList();
+                foreach (var flight in f)
+                {
+                    Console.WriteLine(flight);
+                }
+                return f;
+
 
         }
 
-        void ShowFlightDetails(Plane plane)
+
+          public void ShowFlightDetails(Plane plane)
         {
             var query = Flights
                 .Where(f => f.plane.planeId == plane.planeId)
@@ -198,10 +211,10 @@ namespace AM.ApplicationCore.Services
                 .Count(f => f.flightDate > startDate && (f.flightDate - startDate).TotalDays < 7);
             return query;
         }
-        Double DurationAverage(string destination)
+        public Double DurationAverage(string duration)
         {
             var query = Flights
-                .Where(f => f.destination.Equals(destination))
+                .Where(f => f.destination.Equals(duration))
                 .Average(f => f.estimatedDuration);
             return query;    
         }
@@ -236,5 +249,22 @@ namespace AM.ApplicationCore.Services
                 }
             }
         }
+
+        
+
+        public List<Flight> GetFlights2(string filterValue, Func<Flight, string, bool> condition)
+        {
+            var query = from flight in Flights
+                        where condition(flight, filterValue)
+                        select flight;
+            List<Flight> f = query.ToList();
+            foreach (var flight in f)
+            {
+                Console.WriteLine(flight);
+            }
+            return f;
+        }
+
+
     }
 }

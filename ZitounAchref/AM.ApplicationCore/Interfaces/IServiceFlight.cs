@@ -20,5 +20,7 @@ namespace AM.ApplicationCore.Interfaces
 
         List<Traveller> SeniorTravellers(Flight flight);
         void DestinationGroupedFlights();
+
+        
     }
 }
