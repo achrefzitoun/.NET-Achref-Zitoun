@@ -35,14 +35,12 @@ Plane plane = new Plane();
 
 //Staff s = new Staff();
 //s.PassengerType();
-
 //Traveller t = new Traveller();
 //t.PassengerType();
 
-
 // ------------------------------------------------------------------------
 //TP2 
-// 5
+//5
 
 ServiceFlight serviceFlight = new ServiceFlight();
 serviceFlight.Flights = TestData.flights;
@@ -59,35 +57,8 @@ serviceFlight.GetFlights("2023/01/01", (Flight f, String c) =>
 });
 */
 
-/*
-
-*/
-
-
-
-// TP Partie 2 
-// Question 16 / 17 / 18 
-
-        Action<Plane> FlightDetailsDel = serviceFlight.ShowFlightDetails;
-        FlightDetailsDel(TestData.planes[1]);
-
-        Console.WriteLine("==========================");
-
-        Func<String,double> DurationAverageDel = serviceFlight.DurationAverage;
-        Console.WriteLine(DurationAverageDel("Paris"));
-
-        Console.WriteLine("==========================");
-
-        FlightDetailsDel = Plane => serviceFlight.ShowFlightDetails(TestData.planes[1]);
-
-        Console.WriteLine("==========================");
-
-        DurationAverageDel = flightList => TestData.flights.Average(flight => flight.estimatedDuration);
-
-        Console.WriteLine("==========================");
-
-// Qestion 19 En ServiceFlight 
 // Question 20 En Passenger Extension
-
-
-
+Passenger p = new Staff();
+p = TestData.staff[1];
+p.UpperFullName();
+Console.WriteLine(p.firstName + " " + p.lastName);
