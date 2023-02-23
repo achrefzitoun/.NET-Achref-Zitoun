@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,33 @@ namespace AM.ApplicationCore.Services
     public class ServiceFlight 
     {
         public List<Flight> Flights { get; set; } = new List<Flight>(); // Création d'une liste 
+
+        // 16 / 17 / 18 => ligne 42
+        public ServiceFlight() {
+            //FlightDetails = ShowFlightDetails;
+            //DurationAverageDel = DurationAverage;
+            FlightDetails = (Plane plane) =>
+            {
+                var query = Flights
+                    .Where(f => f.plane.planeId == plane.planeId)
+                    .Select(f => new { f.destination, f.flightDate });
+                foreach (var item in query)
+                {
+                    Console.WriteLine(item);
+                }
+            };
+
+            DurationAverageDel = (string duration) =>
+            {
+                var query = Flights
+                    .Where(f => f.destination.Equals(duration))
+                    .Average(f => f.estimatedDuration);
+                return ((float)query);
+            };
+        }
+
+        public Action<Plane> FlightDetails { get; set; }
+        public Func<String, float> DurationAverageDel { get; set; }
 
         // 6 + 7 
         public List<DateTime> GetFlightDates(string destination)
@@ -211,12 +239,12 @@ namespace AM.ApplicationCore.Services
                 .Count(f => f.flightDate > startDate && (f.flightDate - startDate).TotalDays < 7);
             return query;
         }
-        public Double DurationAverage(string duration)
+        public float DurationAverage(string duration)
         {
             var query = Flights
                 .Where(f => f.destination.Equals(duration))
                 .Average(f => f.estimatedDuration);
-            return query;    
+            return ((float)query);    
         }
 
         List<Flight> OrderedDurationFlights()
