@@ -15,10 +15,10 @@ namespace AM.Infrastructure.Configuration
         public void Configure(EntityTypeBuilder<Flight> builder)
         {
             builder.HasKey(f => f.flightId);
-            builder.ToTable("MyFlight");
+            builder.ToTable("MyFlight"); // configuration nahat l configuration du pre-convention
             builder.Property(f => f.departure).IsRequired().HasMaxLength(100).HasColumnName("Depart").HasDefaultValue("Tunis").HasColumnType("nchar");
             builder.HasOne(f => f.plane).WithMany(p => p.flights).HasForeignKey(f => f.planeFk).OnDelete(DeleteBehavior.SetNull);
-            builder.HasMany(f => f.passengers).WithMany(c => c.flights).UsingEntity(p => p.ToTable("MyReservation"));
+            //builder.HasMany(f => f.passengers).WithMany(c => c.flights).UsingEntity(p => p.ToTable("MyReservation"));
         }
     }
 }
