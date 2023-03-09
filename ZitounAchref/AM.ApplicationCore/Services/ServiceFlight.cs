@@ -255,14 +255,14 @@ namespace AM.ApplicationCore.Services
             return query.ToList();
         }
 
-        List<Traveller> SeniorTravellers(Flight flight)
-        {
-            var query = flight.passengers.OfType<Traveller>()
-            //    .Where(p => p is Traveller)
-                .OrderBy(p => p.birthDate).Take(3).ToList();
-            List<Passenger> p = new List<Passenger>(query);
-            return query;
-        }
+        //List<Traveller> SeniorTravellers(Flight flight)
+        //{
+        //    var query = flight.passengers.OfType<Traveller>()
+        //    //    .Where(p => p is Traveller)
+        //        .OrderBy(p => p.birthDate).Take(3).ToList();
+        //    List<Passenger> p = new List<Passenger>(query);
+        //    return query;
+        //}
 
         void DestinationGroupedFlights()
         {

@@ -10,6 +10,7 @@ namespace AM.ApplicationCore.Domain
 {
     public class Passenger
     {
+        
         public int passengerId { get; set; }
 
         [DisplayName("Date of Birth")]
@@ -18,9 +19,10 @@ namespace AM.ApplicationCore.Domain
         // ki tabda tahkilha f haja 
         [MinLength(3,ErrorMessage ="First Name must contains 3 characters(Minimum")]
         [MaxLength(25,ErrorMessage ="First Name must contains 25 characters (Maximum)")]
-        public string firstName { get; set; }
+        //public string firstName { get; set; }
+        //public string lastName { get; set; }
 
-        public string lastName { get; set; }
+        public FullName FullName { get; set; }
 
         [DataType(DataType.EmailAddress)]
         public string emailAdress { get; set; }
@@ -32,12 +34,14 @@ namespace AM.ApplicationCore.Domain
         [StringLength(7)]
         public string passportNumber { get; set; }
 
-        public List<Flight> flights { get; set; }
+        public List<Ticket> tickets { get; set; }
 
-        public override string ToString()
-        {
-            return birthDate + " " + firstName + " " + lastName + " " +  emailAdress + " " + telNumber + " " + passportNumber + " " + flights;
-        }
+        //public List<Flight> flights { get; set; }
+
+        //public override string ToString()
+        //{
+        //    return birthDate + " " + firstName + " " + lastName + " " +  emailAdress + " " + telNumber + " " + passportNumber + " " + flights;
+        //}
 
         /*
         public bool CheckProfile(string fName, string lName)
@@ -50,13 +54,13 @@ namespace AM.ApplicationCore.Domain
         }
         */
 
-        public bool CheckProfile(string fName, string lName, string email=null)
-        {
-            if (email==null)
-                return fName == firstName && lName == lastName;
+        //public bool CheckProfile(string fName, string lName, string email=null)
+        //{
+        //    if (email==null)
+        //        return fName == firstName && lName == lastName;
 
-            return fName == firstName && lName == lastName && email == emailAdress;
-        }
+        //    return fName == firstName && lName == lastName && email == emailAdress;
+        //}
 
         public virtual void PassengerType()
         {
