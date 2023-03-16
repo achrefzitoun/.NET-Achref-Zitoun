@@ -18,12 +18,12 @@ namespace AM.ApplicationCore.Domain
         public int estimatedDuration { get; set; }
         //public List<Passenger> passengers { get; set; }
 
-        public List<Ticket> tickets { get; set; }
+        public virtual List<Ticket> tickets { get; set; }
 
         [ForeignKey(nameof(plane))]
         public int? planeFk { get; set; }
         //Relation najmou nhotoha f plane ama mbaaed f interface lokhra tsahel alik l khedma akther
-        public Plane? plane { get; set; }
+        public virtual Plane? plane { get; set; }
 
         public override string ToString()
         {

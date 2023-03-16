@@ -14,13 +14,13 @@ namespace AM.ApplicationCore.Domain
         public bool VIP { get; set; }
         public double Prix { get; set; }
         public string Siege { get; set; }
-        public Flight flight { get; set; }
-        public Passenger passenger { get; set; }
+        public virtual Flight flight { get; set; }
+        public virtual Passenger passenger { get; set; }
         //[Key]
-        [ForeignKey(nameof(flight))]
+        //[ForeignKey(nameof(flight))]
         public int flightFK { get; set; }
         //[Key]
-        [ForeignKey(nameof(passenger))]
+        //[ForeignKey(nameof(passenger))]
         public string passengerFK { get; set; }
     }
 }

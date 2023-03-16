@@ -34,7 +34,9 @@ namespace AM.ApplicationCore.Domain
         [StringLength(7)]
         public string passportNumber { get; set; }
 
-        public List<Ticket> tickets { get; set; }
+        public virtual List<Ticket> tickets { get; set; }
+
+        public virtual List<Reservation> reservations { get; set; }
 
         //public List<Flight> flights { get; set; }
 
