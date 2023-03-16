@@ -17,10 +17,14 @@ namespace AM.Infrastructure
         public DbSet<Plane> Planes {get;set;}
         public DbSet<Staff> Staffs {get;set;}
         public DbSet<Traveller> Travellers {get;set;}
-        //public DbSet<Test2> test2s { get;set;}
+        public DbSet<Ticket> tickets { get;set;}
+        public DbSet<Section> sections { get; set; }
+        public DbSet<Seat> Seat { get;set;}
+        public DbSet<Reservation> Reservations { get;set;} 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseLazyLoadingProxies();
             optionsBuilder.UseSqlServer(@"Data Source = (localDB)\MsSqlLocalDB; initial catalog = AchrefZitounNet; Integrated Security=true;");
         }
 
@@ -29,6 +33,8 @@ namespace AM.Infrastructure
             modelBuilder.ApplyConfiguration(new FlighConfiguration());
             //modelBuilder.ApplyConfiguration(new PassengerConfiguration());
             modelBuilder.ApplyConfiguration(new TicketConfiguration());
+            modelBuilder.ApplyConfiguration(new SeatConfiguration());
+            modelBuilder.ApplyConfiguration(new ReservationConfiguration());
             modelBuilder.Entity<Passenger>().ToTable(nameof(Passengers));
             modelBuilder.Entity<Staff>().ToTable(nameof(Staffs));
             modelBuilder.Entity<Traveller>().ToTable(nameof(Travellers));

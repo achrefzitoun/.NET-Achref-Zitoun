@@ -14,6 +14,9 @@ namespace AM.Infrastructure.Configuration
         public void Configure(EntityTypeBuilder<Ticket> builder)
         {
             builder.HasKey(r => new {r.passengerFK, r.flightFK});
+            builder.HasOne(p => p.passenger ).WithMany(x => x.tickets).HasForeignKey(t => t.passengerFK);
+            builder.HasOne(p => p.flight ).WithMany(x => x.tickets).HasForeignKey(t => t.flightFK);
+
         }
     }
 }
