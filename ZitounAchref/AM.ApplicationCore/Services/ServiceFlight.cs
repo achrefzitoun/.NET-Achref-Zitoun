@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace AM.ApplicationCore.Services
 {
-    public class ServiceFlight 
+    public class ServiceFlight : Service<Flight>, IServiceFlight
     {
         public List<Flight> Flights { get; set; } = new List<Flight>(); // Création d'une liste 
 
         // 16 / 17 / 18 => ligne 42
-        public ServiceFlight() {
+        public ServiceFlight(IUnitOfWork uow): base(uow) {
             //FlightDetails = ShowFlightDetails;
             //DurationAverageDel = DurationAverage;
             FlightDetails = (Plane plane) =>
