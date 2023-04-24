@@ -16,6 +16,8 @@ namespace AM.ApplicationCore.Domain
         public DateTime manufactureDate { get; set; }
         public virtual ICollection<Flight> flights { get; set; }
         public virtual List<Seat> Seats { get; set; }
+        public string information { get { return capacity + " " + planeId + " " + manufactureDate + " " + planeType; } }
+
         public override string ToString()
         {
             return capacity + " " + planeId + " " + planeType + " " + manufactureDate + " " + flights;
